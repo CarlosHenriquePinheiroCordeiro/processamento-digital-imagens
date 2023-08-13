@@ -1,0 +1,8 @@
+- Utilizar como referencia a imagem (PGM)
+- NÂO será cobrado método específico para aumentar/diminuir resolução, deixarei aberto a forma de como será realizado o processo.
+
+a) Tamanho 10x menor
+b) Padrão 480x320
+c) Padrão 720p (HD)
+d) Padrão 1080p Full HD
+e) Padrão 4k e 8k (interpolada)
