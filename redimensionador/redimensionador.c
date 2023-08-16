@@ -14,7 +14,7 @@ void main() {
      * (4) Padrão 4k
      * (5) Padrão 8k
      */
-    short iTamanhoSelecionado = 3;
+    short iTamanhoSelecionado = 5;
     short iXimagem = 800;
     short iYimagem = 800;
     int   aPixels[iXimagem*iYimagem][2];
