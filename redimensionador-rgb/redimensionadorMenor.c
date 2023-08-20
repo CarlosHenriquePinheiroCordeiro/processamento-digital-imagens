@@ -19,19 +19,14 @@ void main() {
     short iY = 0;
     char  sCor[200] = "";
     printf("\nMontando matriz de pixels...");
-    for (short i = 0; i < 3; i++) //Ignorando valores de cabeçalho, resolução e tonalidade
-    {
+    for (short i = 0; i < 3; i++) {
         fgets(sCor, 200, oImg);
     }
-    while (fgets(sCor, 200, oImg))
-    {
+    while (fgets(sCor, 200, oImg)) {
         char *sSplit = strtok(sCor, " ");
-        while (sSplit != NULL)
-        {
-            if (strcmp(sSplit, "\n") != 0) 
-            {
-                if (iY > 0 && iY % iYImagem == 0)
-                {
+        while (sSplit != NULL) {
+            if (strcmp(sSplit, "\n") != 0) {
+                if (iY > 0 && iY % iYImagem == 0) {
                     iY = 0;
                     iX++;
                 }
@@ -61,15 +56,12 @@ void main() {
     short iRed    = 0;
     short iGreen  = 0;
     short iBlue   = 0;
-    for (iX = 0; iX < iYImagem; iX++) //Escrevendo imagem com colunas redimensionadas
-    {
-        for (iY = 0; iY < iXImagem; iY++)
-        {
+    for (iX = 0; iX < iYImagem; iX++) { //Escrevendo imagem com colunas redimensionadas
+        for (iY = 0; iY < iXImagem; iY++) {
             iRed   += aPixels[iX][iY][0];
             iGreen += aPixels[iX][iY][1];
             iBlue  += aPixels[iX][iY][2];
-            if ((iY+1) % iQuantidadeMedia == 0)
-            {
+            if ((iY+1) % iQuantidadeMedia == 0) {
                 fprintf(oNovaImagem, "%d %d %d\n", iRed/iQuantidadeMedia, iGreen/iQuantidadeMedia, iBlue/iQuantidadeMedia);
                 iRed    = 0;
                 iGreen  = 0;
@@ -83,15 +75,11 @@ void main() {
     int iIndice = 0;
     iX = 0;
     iY = 0;
-    while (fgets(sCor, 200, oNovaImagem)) //Salvando imagem com colunas redimensionadas em um array para posteriormente redimensionar as linhas
-    {
+    while (fgets(sCor, 200, oNovaImagem)) {//Salvando imagem com colunas redimensionadas em um array para posteriormente redimensionar as linhas
         char *sSplit = strtok(sCor, " ");
-        while (sSplit != NULL)
-        {
-            if (strcmp(sSplit, "\n") != 0) 
-            {
-                if (iY > 0 && iY % iYImagem == 0)
-                {
+        while (sSplit != NULL) {
+            if (strcmp(sSplit, "\n") != 0) {
+                if (iY > 0 && iY % iYImagem == 0) {
                     iY = 0;
                     iX++;
                 }
@@ -106,15 +94,12 @@ void main() {
         }
     }
     fclose(oNovaImagem);
-    for (iY = 0; iY < iYImagem; iY++)
-    {
-        for (iX = 0; iX < iXImagem; iX++)
-        {
+    for (iY = 0; iY < iYImagem; iY++) {
+        for (iX = 0; iX < iXImagem; iX++) {
             iRed   += aPixels[iX][iY][0];
             iGreen += aPixels[iX][iY][1];
             iBlue  += aPixels[iX][iY][2];
-            if ((iX+1) % iQuantidadeMedia == 0)
-            {
+            if ((iX+1) % iQuantidadeMedia == 0) {
                 iRed   = iRed/iQuantidadeMedia;
                 iGreen = iGreen/iQuantidadeMedia;
                 iBlue  = iBlue/iQuantidadeMedia;
@@ -140,10 +125,8 @@ void main() {
     int iContador = 0;
     iX = 0;
     iY = 0;
-    while (iContador < iTamanhoX*iTamanhoY)
-    {
-        for (iY = 0; iY < iTamanhoY; iY++)
-        {
+    while (iContador < iTamanhoX*iTamanhoY) {
+        for (iY = 0; iY < iTamanhoY; iY++) {
             iContador++;
             fprintf(oNovaImagem, "%d\n%d\n%d\n", aPixels[iX][iY][0], aPixels[iX][iY][1], aPixels[iX][iY][2]);
         }
