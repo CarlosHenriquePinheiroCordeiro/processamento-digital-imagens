@@ -4,7 +4,6 @@
 
 FILE *oImg;
 FILE *oNovaImagem;
-FILE *oNovaImagem;
 
 void main() {
     /**
@@ -13,7 +12,7 @@ void main() {
      * (2) Padrão 4k
      * (3) Padrão 8k
      */
-    short iTamanhoSelecionado = 0;
+    short iTamanhoSelecionado = 3;
     short iXImagem = 800;
     short iYImagem = 800;
     short aPixels[iXImagem][iYImagem][3];
