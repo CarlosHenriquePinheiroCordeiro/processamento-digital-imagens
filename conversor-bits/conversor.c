@@ -17,12 +17,19 @@ void main() {
     }
     while (fgets(sCor, 10, oImg))
     {
-        fprintf(oNovaImagem, "%d\n", diminuiTonalidadePixel(atoi(sCor)));
+        fprintf(oNovaImagem, "%d\n", diminuiTonalidadePixel(atoi(sCor), 1));
     }
     fclose(oNovaImagem);
     fclose(oImg);
 }
 
-int diminuiTonalidadePixel(int iPixel) {
-    return round((iPixel*31)/255);
+int diminuiTonalidadePixel(int iPixel, int iAumentaBrilho) {
+    int iPixelNovo = round((iPixel*31)/255);
+    if (iAumentaBrilho > 0) {
+        int iAumento = iPixelNovo + (iPixelNovo*0.2);
+        if (iAumento < 32) {
+            iPixelNovo = iAumento;
+        }
+    }
+    return iPixelNovo;
 }
